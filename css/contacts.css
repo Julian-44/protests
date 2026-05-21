@@ -1,0 +1,162 @@
+/* -------------------------------
+   Страница контактов
+--------------------------------- */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    margin: 24px 0;
+}
+.contact-card {
+    background: white;
+    padding: 28px 20px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #edf2f7;
+}
+.contact-icon {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+.contact-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--dark-blue);
+}
+.contact-card p {
+    color: #2d3748;
+    margin: 6px 0;
+}
+.map-placeholder {
+    background: white;
+    border-radius: 28px;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    margin-top: 24px;
+}
+.map-gray {
+    flex: 1;
+    background-color: #A0AEC0;
+    height: 240px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #2d3748;
+    overflow: hidden;
+}
+.map-gray img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.map-gray:not(:has(img))::before {
+    content: "СХЕМА ПРОЕЗДА / КАРТА";
+    font-size: 1rem;
+    font-weight: 500;
+}
+.map-desc {
+    flex: 1;
+}
+.map-desc p {
+    margin: 12px 0;
+    color: #2d3748;
+}
+.feedback-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    background: white;
+    border-radius: 32px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+.feedback-text {
+    flex: 1;
+}
+.feedback-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: var(--dark-blue);
+}
+.feedback-text ul {
+    margin: 24px 0;
+    list-style: none;
+}
+.feedback-text li {
+    margin: 10px 0;
+}
+.socials {
+    margin-top: 28px;
+}
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+.social-icons span {
+    font-size: 1.8rem;
+    background: #F4F6F9;
+    padding: 8px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.feedback-form {
+    flex: 1;
+}
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.feedback-form button {
+    background: var(--orange);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.requisites {
+    text-align: center;
+    background: white;
+    padding: 28px;
+    border-radius: 28px;
+}
+.requisites h3 {
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+}
+.requisites p {
+    color: #2d3748;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+@media (max-width: 760px) {
+    .map-placeholder {
+        flex-direction: column;
+    }
+    .map-gray {
+        width: 100%;
+        height: 180px;
+    }
+    .feedback-wrapper {
+        padding: 24px;
+    }
+}

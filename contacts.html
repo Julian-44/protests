@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты – Центр профориентации</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <!-- Подключаем API 2ГИС -->
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <style>
+        /* Небольшой довесок, чтобы карта вписалась в блок .map-gray */
+        .map-gray {
+            background: none;          /* убираем серую заливку */
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+        }
+        #map2gis {
+            width: 100%;
+            height: 100%;
+            min-height: 240px;         /* чтобы карта не схлопнулась */
+        }
+        /* на случай, если высота .map-gray не задана жёстко – страхуем */
+        .map-gray {
+            height: auto;
+        }
+        @media (max-width: 760px) {
+            #map2gis {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">Проф<span>Центр</span></div>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="tests.html">Тесты</a>
+            <a href="specialists.html">Специалисты</a>
+            <a href="prices.html">Цены</a>
+            <a href="contacts.html" class="active">Контакты</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <p>Запись по телефону, в мессенджерах или через форму – ответим в течение часа</p>
+        </div>
+    </section>
+
+    <!-- Контактные блоки (карточки) -->
+    <section>
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Адрес</h3>
+                    <p>Санкт-Петербург, ул. Рубинштейна, д. 18.</p>
+                    <p>Владимирская (~5 мин пешком)</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Телефон</h3>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>+7 (916) 000-11-22 (WhatsApp)</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>proftest.crow@internet.ru</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🕒</div>
+                    <h3>Режим работы</h3>
+                    <p>Пн–Пт: 10:00 – 20:00</p>
+                    <p>Сб: 11:00 – 17:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Карта 2ГИС вместо серой заглушки -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="text-center">Как нас найти</h2>
+            <div class="map-placeholder">
+                <!-- iframe от 2ГИС с меткой -->
+                <iframe 
+                    src="https://yandex.ru/map-widget/v1/?ll=30.343952%2C59.929619&z=17&pt=30.343952,59.929619,pm2rdm"
+                    width="100%" 
+                    height="300" 
+                    style="border: 0; border-radius: 20px;" 
+                    allowfullscreen 
+                    loading="lazy">
+                </iframe>
+                <div class="map-desc">
+                    <p>🚇 Метро Владимирская</p>
+                    <p>🚌 Автобусы 3, 7, 22, 27, 181, 191 до остановки «Литейный проспект».</p>
+                    <p>🚗 Парковка: бесплатная на прилегающей улице, есть платная парковка у бизнес-центра.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи + быстрая запись -->
+    <section>
+        <div class="container">
+            <div class="feedback-wrapper">
+                <div class="feedback-text">
+                    <h2>Напишите нам</h2>
+                    <p>Ответим на любые вопросы: подбор теста, стоимость, скидки, онлайн-формат.</p>
+                    <ul>
+                        <li>✔️ Обычный ответ в течение 2 часов</li>
+                        <li>✔️ Срочные вопросы – звоните по телефону</li>
+                        <li>✔️ Запись на консультацию через форму</li>
+                    </ul>
+                    <div class="socials">
+                        <p>Мы в соцсетях:</p>
+                        <div class="social-icons">
+                            <span>📘</span>
+                            <span>📸</span>
+                            <span>🎬</span>
+                            <span>💬</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-form">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="tel" placeholder="Телефон">
+                        <textarea rows="4" placeholder="Ваш вопрос или комментарий"></textarea>
+                        <button type="submit" class="btn">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Реквизиты организации (опционально) -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="requisites">
+                <h3>Реквизиты для оплаты и договоров</h3>
+                <p>ИП Воронина А.С. | ИНН 771234567890 | ОГРНИП 321770000123456</p>
+                <p>Расчётный счёт: 40802810123456789012 в Т-Банке</p>
+                <p>Юридический адрес: 117321, г. Москва, ул. Профсоюзная, д. 25, оф. 304</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Центр профориентации и тестирования | Будем рады помочь</p>
+    </div>
+</footer>
+
+<script>
+    // Ждём полной загрузки API 2ГИС и DOM
+    DG.then(function () {
+        // Координаты центра (ул. Рубинштейна, 18)
+        var center = [59.929619, 30.343952];
+        // Создаём карту в контейнере .map-gray (по id)
+        var map = DG.map('map2gis-container', {
+            center: center,
+            zoom: 17,
+            // Убираем лишние элементы управления, оставляем только зум и масштаб
+            controls: ['zoomControl']
+        });
+        // Добавляем маркер
+        DG.marker(center).addTo(map).bindPopup('Центр профориентации<br>ул. Рубинштейна, 18');
+    });
+</script>
+</body>
+</html>

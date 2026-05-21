@@ -1,0 +1,176 @@
+/* -------------------------------
+   Страница специалистов
+--------------------------------- */
+.team-grid-large {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.specialist-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: white;
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    border: 1px solid #edf2f7;
+    transition: 0.2s;
+}
+.specialist-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 24px;
+    background-color: #A0AEC0;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.specialist-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.specialist-photo:empty::before {
+    content: "ФОТО";
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+.specialist-photo:not(:empty) {
+    background: none;
+}
+.specialist-info {
+    flex: 1;
+}
+.specialist-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+    color: var(--dark-blue);
+}
+.specialist-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--orange);
+    margin-bottom: 12px;
+}
+.specialist-details {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+.specialist-desc {
+    margin-bottom: 16px;
+    color: #2d3748;
+    line-height: 1.5;
+}
+.specialist-badge {
+    display: inline-block;
+    background: #F4F6F9;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+.values-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+    justify-content: center;
+}
+.value-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    background: white;
+    padding: 32px 20px;
+    border-radius: 28px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.value-icon {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+}
+.value-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--dark-blue);
+}
+.value-item p {
+    color: #2d3748;
+}
+.appointment-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    background: var(--dark-blue);
+    border-radius: 32px;
+    padding: 48px 40px;
+    color: white;
+    align-items: center;
+}
+.appointment-text {
+    flex: 1;
+}
+.appointment-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: white;
+}
+.appointment-text p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+.appointment-text ul {
+    list-style: none;
+}
+.appointment-text li {
+    margin: 12px 0;
+}
+.appointment-form {
+    flex: 1;
+    background: white;
+    padding: 32px;
+    border-radius: 28px;
+}
+.appointment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.appointment-form input,
+.appointment-form select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 48px;
+    font-size: 1rem;
+}
+.appointment-form button {
+    width: 100%;
+}
+@media (max-width: 760px) {
+    .specialist-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .specialist-photo {
+        width: 140px;
+        height: 140px;
+    }
+    .specialist-details {
+        justify-content: center;
+    }
+    .appointment-card {
+        padding: 32px 24px;
+        text-align: center;
+    }
+}
